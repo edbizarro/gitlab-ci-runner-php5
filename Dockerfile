@@ -46,6 +46,7 @@ WORKDIR /tmp
 
 # Run composer and phpunit installation.
 RUN composer selfupdate && \
+    composer global require "hirak/prestissimo:^0.1" --no-interaction && \
     composer require "phpunit/phpunit:^4.8" --prefer-source --no-interaction && \
     ln -s /tmp/vendor/bin/phpunit /usr/local/bin/phpunit
 
