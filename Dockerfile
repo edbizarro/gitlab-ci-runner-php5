@@ -51,3 +51,5 @@ RUN composer selfupdate && \
     ln -s /tmp/vendor/bin/phpunit /usr/local/bin/phpunit
 
 RUN composer --version
+
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
