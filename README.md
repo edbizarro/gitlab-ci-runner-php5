@@ -6,7 +6,6 @@
 
 ### This image contains:
 
-- PHP 5.6 with: fpm, mcrypt, mongo, xdebug, zip, xml, mbstring, curl, json, mysql and tokenizer extensions
+- PHP 5.6 with: mcrypt, xdebug, zip, xml, mbstring, curl, json, mysql and tokenizer extensions
 - [Composer](https://getcomposer.org/)
-- [Deployer](https://github.com/deployphp/deployer)
 - Node / NPM / Gulp
