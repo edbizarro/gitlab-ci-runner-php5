@@ -35,7 +35,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 #NODE JS
 RUN curl -sL https://deb.nodesource.com/setup_7.x | bash - && \
     apt-get install nodejs -qq && \
-    npm install -g gulp
+    npm install -g npm gulp 
 
 # YARN
 RUN curl -o- -L https://yarnpkg.com/install.sh | bash
@@ -77,4 +77,4 @@ RUN composer selfupdate && \
 
 RUN service php5.6-fpm restart
 
-RUN apt-get clean && apt-get autoremove && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get remove --purge autoconf g++ make && apt-get clean && apt-get autoremove && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
