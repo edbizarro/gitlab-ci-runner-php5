@@ -43,7 +43,7 @@ RUN curl -o- -L https://yarnpkg.com/install.sh | bash
 # PHP Extensions
 RUN DEBIAN_FRONTEND=noninteractive add-apt-repository -y ppa:ondrej/php && \
     DEBIAN_FRONTEND=noninteractive apt-get update && \
-    apt-get install -y php-pear php5.6-dev php5.6-fpm php5.6-mcrypt php5.6-zip php5.6-xml php5.6-mbstring php5.6-curl php5.6-json php5.6-mysql php5.6-tokenizer php5.6-cli && \   
+    apt-get install -y --no-install-recommends php-pear php5.6-dev php5.6-fpm php5.6-mcrypt php5.6-zip php5.6-xml php5.6-mbstring php5.6-curl php5.6-json php5.6-mysql php5.6-tokenizer php5.6-cli && \   
     wget https://xdebug.org/files/xdebug-2.4.0rc4.tgz && \
     tar -xzf xdebug-2.4.0rc4.tgz && \
     rm xdebug-2.4.0rc4.tgz && \
@@ -77,4 +77,4 @@ RUN composer selfupdate && \
 
 RUN service php5.6-fpm restart
 
-RUN apt-get remove --purge autoconf g++ make && apt-get clean && apt-get autoremove && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get remove --purge autoconf g++ make -y && apt-get clean && apt-get autoremove -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
