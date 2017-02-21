@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+# DEPRECATED, USE https://github.com/edbizarro/gitlab-ci-pipeline-php INSTEAD
 
 MAINTAINER Eduardo Bizarro <edbizarro@gmail.com>
 
